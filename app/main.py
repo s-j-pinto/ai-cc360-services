@@ -7,7 +7,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    ollama_base_url: str = "http://192.168.86.250:11434"
+    ollama_base_url: str = "http://127.0.0.1:8080"
     ollama_model: str = "qwen3.5:4b"
     ollama_timeout_seconds: float = 600.0
 
@@ -97,7 +97,8 @@ async def caregiver_insight(candidate: CaregiverProfile, client: Client) -> Insi
     request_body = {
         "model": settings.ollama_model,
         "prompt": build_prompt(candidate),
-        "stream": True,
+        "stream": False,
+        "think": False,
     }
     try:
         response = await client.post(f"{settings.ollama_base_url}/api/generate", json=request_body)
