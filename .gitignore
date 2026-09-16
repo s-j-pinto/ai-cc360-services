@@ -2,6 +2,7 @@
 .env
 .env.*
 !.env.example
+tunnel.log
 
 # Python
 __pycache__/
