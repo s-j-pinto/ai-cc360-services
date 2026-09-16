@@ -1,0 +1,194 @@
+{
+    "clientName": "Mary Beck",
+    "reportPeriod": {
+        "startDate": "2026-09-12",
+        "endDate": "2026-09-15"
+    },
+    "summary": {
+        "overview": "Care activities for Mary Beck spanned September 12 through 15, 2026. Visits included personal care assistance, meal preparation, household tasks, and community outings.",
+        "totalVisitsDocumented": 7,
+        "primaryCareNeeds": [
+            "mobility",
+            "personal hygiene",
+            "nutrition"
+        ]
+    },
+    "visitSummary": [
+        {
+            "date": "2026-09-15",
+            "caregiver": "Enid Robinson",
+            "scheduledStartTime": null,
+            "scheduledEndTime": null,
+            "activitiesCompleted": [
+                "Toileting assistance includingwashing hands and cleaning crust from eyes.",
+                "Administered insulin shot and assisted with dressing in socks and shoes.",
+                "Prepared breakfast, washed walker, and supported nap time."
+            ],
+            "clientObservations": [
+                "Blood sugar level noted at 125. Participated in community activities including car wash event.",
+                "Aptointment scheduled was canceled as of morning.",
+                "No significant mobility or behavioral changes observed during the visit."
+            ],
+            "shiftNotes": "Visit ended around 11:45 AM; no explicit end time or shift handoff details provided in text.",
+            "concernsReported": [],
+            "followUpRequired": true
+        },
+        {
+            "date": "2026-09-14",
+            "caregiver": "Kayla Hecker",
+            "scheduledStartTime": null,
+            "scheduledEndTime": null,
+            "activitiesCompleted": [
+                "Assisted with bathroom transfers, diaper changes, and tooth brushing.",
+                "Restocked supplies including diapers and pads.",
+                "Supported evening social time and dinner attendance."
+            ],
+            "clientObservations": [
+                "Client engaged in light household chores and watched television.",
+                "Attended evening meal and church meeting preparation discussions.",
+                "Mobility assisted during transfers to bed for nap."
+            ],
+            "shiftNotes": "No explicit end time documented; caregiver noted routine household tasks performed late night.",
+            "concernsReported": [],
+            "followUpRequired": false
+        },
+        {
+            "date": "2026-09-13",
+            "caregiver": "Mercedes Woodson",
+            "scheduledStartTime": null,
+            "scheduledEndTime": null,
+            "activitiesCompleted": [
+                "Assisted with pull-up change and evening pajama routine.",
+                "Supported client walk after supper and television viewing.",
+                "Served snacks and crackers before bedtime."
+            ],
+            "clientObservations": [
+                "Ate 75% of supper meal and consumed approximately 36 ounces of fluid.",
+                "Engaged in news watching prior to bedtime at 9:05 PM.",
+                "No behavioral or hygiene concerns noted during this visit."
+            ],
+            "shiftNotes": "Visit end time documented as 9:05 PM.",
+            "concernsReported": [],
+            "followUpRequired": false
+        },
+        {
+            "date": "2026-09-13",
+            "caregiver": "Yahne Booker-Ward",
+            "scheduledStartTime": null,
+            "scheduledEndTime": null,
+            "activitiesCompleted": [
+                "Cleaned undergarments and assisted with lunch in lunch room.",
+                "Made the bed after client attended church service.",
+                "Provided coffee and fruit fellowship meal."
+            ],
+            "clientObservations": [
+                "Ate 100% of dinner previously and participated in morning church attendance.",
+                "Displayed positive mood during documented interactions.",
+                "No mobility assistance specifically noted beyond undergarment cleaning."
+            ],
+            "shiftNotes": "Visit occurred early morning around 6:00 AM; no end timeprovided.",
+            "concernsReported": [],
+            "followUpRequired": false
+        },
+        {
+            "date": "2026-09-13",
+            "caregiver": "Tyonna Walker",
+            "scheduledStartTime": null,
+            "scheduledEndTime": null,
+            "activitiesCompleted": [
+                "Performed diaper changes and applied cream to elbow.",
+                "Repositioned client with pillow under elbow for comfort.",
+                "Cleaned bathroom and replaced towels."
+            ],
+            "clientObservations": [
+                "Multiple instances of incontinence requiring immediate diaper change.",
+                "Reported discomfort during care interactions and requested repositioning.",
+                "Woke up multiple times requiring assistance with toileting throughout day."
+            ],
+            "shiftNotes": "Visit occurred late night around 10:00 PM to 5:00 AM; no clear shift change documented.",
+            "concernsReported": [
+                "Frequent incontinence events impacting client comfort and hygiene routine."
+            ],
+            "followUpRequired": true
+        }
+    ],
+    "careActivities": {
+        "personalCare": [
+            "Diaper changes and toileting assistance.",
+            "Tooth brushing, face routine, and pillow placement for comfort.",
+            "Dressing assistance including socks, shoes, and pajama selection."
+        ],
+        "householdMaintenance": [
+            "Bed making, sweeping, mopping, and trash removal.",
+            "Walker washing and doorknob/table cleaning.",
+            "Bathroom disinfection and towel replacement."
+        ],
+        "nutrition": [
+            "Breakfast preparation and serving.",
+            "Supervision of 100% dinner consumption.",
+            "Serving of snacks including crackers and apple juice."
+        ],
+        "mobilityAndCommunityEngagement": [
+            "Transfer to bed for naps and evening relaxation.",
+            "Attendance at church and car wash event.",
+            "Commute support to living room dining area."
+        ],
+        "otherActivities": []
+    },
+    "healthAndSafetyObservations": {
+        "documentedPositiveObservations": [
+            "Client ate full meals on some days without spillage issues.",
+            "Blood sugar level recorded at normal range (125) on visit date.",
+            "Client engaged in social activities and news watching."
+        ],
+        "medicalConcernsReported": [
+            "Frequent incontinence events noted by Tyonna Walker.",
+            "Application of ointment to elbow was documented."
+        ],
+        "fallsOrIncidentsReported": [],
+        "medicationUpdatesReported": [],
+        "changesInConditionReported": [
+            "No acute changes in condition or health status were reported."
+        ],
+        "notDocumented": []
+    },
+    "careConcernsAndFollowUp": [
+        {
+            "concern": "Frequent incontinence events impacting client comfort and hygiene routine.",
+            "sourceDate": "2026-09-13",
+            "description": "Caregiver noted multiple instances of client waking up wet, requiring diaper changes and repositioning with pillows.",
+            "severity": "medium",
+            "recommendedAction": "Review bladder care routine and document frequency for provider review.",
+            "requiresOwnerReview": true,
+            "requiresClinicalReview": true
+        }
+    ],
+    "agencyOwnerReview": {
+        "overallStatus": "Stable",
+        "completedCareHighlights": [
+            "Consistent personal care and meal support provided.",
+            "Client participated in community activities effectively."
+        ],
+        "documentationGaps": [
+            "Missing visit end times for several caregiver entries.",
+            "Unclear shift handoff details between caregivers."
+        ],
+        "itemsToMonitor": [
+            "Incontinence frequency and potential need for additional supplies.",
+            "Client comfort during repositioning and sleep patterns."
+        ],
+        "recommendedFollowUp": [
+            "Review incontinence logs with clinical team to assess needs.",
+            "Verify completion status of tasks without explicit end times."
+        ]
+    },
+    "documentationMetadata": {
+        "sourceNoteCount": 7,
+        "clientReadStatus": "Good",
+        "reportGeneratedDate": "2026-09-15",
+        "dataLimitations": [
+            "Some visit notes lack precise end times.",
+            "Shift changes were not always explicitly documented."
+        ]
+    }
+}
