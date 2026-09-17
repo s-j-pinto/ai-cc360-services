@@ -3,6 +3,7 @@
 .env.*
 !.env.example
 tunnel.log
+*.log
 
 # Python
 __pycache__/
