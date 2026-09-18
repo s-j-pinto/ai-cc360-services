@@ -28,15 +28,22 @@ Run tests with `pytest`.
 
 ### Weekly notes summary
 
-`POST /api/weekly-notes-summary` with a JSON body containing `visitNotes` and `reportDate`:
+`POST /api/weekly-notes-summary` accepts the upstream request envelope. `visitNotes` is an array of objects containing `date`, `userName`, and `notesMessage`. `reportDate` is optional:
 
 ```bash
 curl -X POST http://localhost:8000/api/weekly-notes-summary \
 	-H "Content-Type: application/json" \
 	-d '{
-		"reportDate": "2026-09-15",
-		"visitNotes": "09/14/2026 11:55 AM\nEssel-Baidoo, Stella\nVisit 09/14/2026 08:00 AM: Dennis was up when I got there, lay his bed and cleaned his room and bathroom, swept and mopped the floors, took out trash, and took him for a neighborhood walk.\n\n09/10/2026 12:31 PM\nTapia Huerta, Teresa\nVisit 09/10/2026 09:00 AM: I purchased ingredients, cooked pasta with chicken, served Mr. Dennis, cleaned up, and finished early. Lisa relieved my shift early."
+		"clientName": "Gunningham, John",
+		"clientId": "204190",
+		"visitNotes": [
+			{
+				"date": "09/17/2026 03:08 PM",
+				"userName": "Pulido, Cristal",
+				"notesMessage": "Visit 09/17/2026 07:00 AM: Client attended a community outing and Mass."
+			}
+		]
 	}'
 ```
 
-The endpoint returns the validated JSON summary object. `reportDate` must use `YYYY-MM-DD` format.
+The endpoint returns the validated JSON summary object. When provided, `reportDate` must use `YYYY-MM-DD` format. Legacy plain-text `visitNotes` input remains accepted.

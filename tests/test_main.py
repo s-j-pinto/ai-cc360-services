@@ -4,7 +4,7 @@ import httpx
 import pytest
 from fastapi.testclient import TestClient
 
-from app.main import app, get_ollama_client
+from app.main import WeeklyNotesRequest, app, build_weekly_notes_prompt, get_ollama_client
 
 
 class FakeOllamaClient:
@@ -51,6 +51,27 @@ Visit 09/14/2026 08:00 AM: Dennis was up when I got there, lay his bed and clean
 Tapia Huerta, Teresa
 Visit 09/10/2026 09:00 AM: Teresa Tapia Dennis Williams 9/10/26 9:00 AM-1:00 PM. I purchased ingredients, cooked pasta with chicken, served Mr. Dennis, cleaned up, and finished early. Lisa relieved my shift early.""",
     }
+
+
+def test_builds_prompt_from_upstream_weekly_notes_envelope() -> None:
+    request = WeeklyNotesRequest(
+        clientName="Gunningham, John",
+        clientId="204190",
+        visitNotes=[
+            {
+                "date": "09/17/2026 03:08 PM",
+                "userName": "Pulido, Cristal",
+                "notesMessage": "Client attended a community outing and Mass.",
+            }
+        ],
+    )
+
+    prompt = build_weekly_notes_prompt(request)
+
+    assert "Client name: Gunningham, John" in prompt
+    assert "Client ID: 204190" in prompt
+    assert '"userName": "Pulido, Cristal"' in prompt
+    assert "Client attended a community outing and Mass." in prompt
 
 
 @pytest.mark.asyncio

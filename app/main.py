@@ -1,3 +1,4 @@
+import json
 from typing import Annotated, Any, Literal
 
 import httpx
@@ -56,9 +57,17 @@ class InsightResponse(BaseModel):
     aiGeneratedInsight: str
 
 
+class VisitNote(BaseModel):
+    date: str = Field(min_length=1)
+    userName: str = Field(min_length=1)
+    notesMessage: str = Field(min_length=1)
+
+
 class WeeklyNotesRequest(BaseModel):
-    visitNotes: str = Field(min_length=1)
-    reportDate: str = Field(pattern=r"^\d{4}-\d{2}-\d{2}$")
+    clientName: str | None = None
+    clientId: str | None = None
+    visitNotes: list[VisitNote] | str
+    reportDate: str | None = Field(default=None, pattern=r"^\d{4}-\d{2}-\d{2}$")
 
 
 class ReportPeriod(BaseModel):
@@ -184,6 +193,11 @@ Recommendation: [Your recommendation and justification...]"""
 
 
 def build_weekly_notes_prompt(request: WeeklyNotesRequest) -> str:
+    source_notes = (
+        request.visitNotes
+        if isinstance(request.visitNotes, str)
+        else json.dumps([note.model_dump() for note in request.visitNotes], indent=2)
+    )
     return f"""You are an experienced senior care administrator and quality assurance reviewer for a home care agency.
 Your task is to analyze caregiver visit notes for a single client and generate a clear, accurate, and professional summary that can be shared with the agency owner.
 
@@ -221,10 +235,12 @@ Return an object with exactly these top-level keys and matching value types:
 clientName, reportPeriod, summary, visitSummary, careActivities, healthAndSafetyObservations, careConcernsAndFollowUp, agencyOwnerReview, documentationMetadata.
 
 Caregiver visit notes:
-{request.visitNotes}
+Client name: {request.clientName or "Not provided"}
+Client ID: {request.clientId or "Not provided"}
+{source_notes}
 
 Report generation date:
-{request.reportDate}"""
+{request.reportDate or "Not provided"}"""
 
 
 @app.get("/health")
