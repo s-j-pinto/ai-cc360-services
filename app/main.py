@@ -205,7 +205,7 @@ Input
 You will receive multiple caregiver visit notes containing some or all of the following: visit date and time, caregiver name, client name, caregiver observations, activities completed, personal care provided, meal preparation and nutrition, household tasks, mobility and community activities, incidents, concerns, changes in condition, shift changes, or early departures.
 
 Instructions:
-1. Identify the client and reporting period from the supplied notes.
+1. Identify the reporting period from the supplied notes.
 2. Summarize the client's care activities across all visits.
 3. Organize each visit by date, caregiver, and documented activities.
 4. Identify documented observations about the client's condition, mood, mobility, appetite, hygiene, and participation.
