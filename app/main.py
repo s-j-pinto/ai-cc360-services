@@ -10,7 +10,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
     ollama_base_url: str = "http://127.0.0.1:8080"
-    ollama_model: str = "qwen3.5:4b"
+    ollama_model: str = "gemma4:e2b"
     ollama_timeout_seconds: float = 300.0
     ollama_num_predict: int = 16384
     cors_allowed_origins: str = "*"

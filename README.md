@@ -12,7 +12,7 @@ cp .env.example .env
 python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-The default upstream is `http://127.0.0.1:8080` for Ollama running locally with `OLLAMA_HOST=0.0.0.0:8080`. Change `OLLAMA_BASE_URL` in `.env` when Ollama is hosted elsewhere. Ensure the model is available with `ollama pull qwen3.5:4b`.
+The default upstream is `http://127.0.0.1:8080` for Ollama running locally with `OLLAMA_HOST=0.0.0.0:8080`. Change `OLLAMA_BASE_URL` in `.env` when Ollama is hosted elsewhere. Ensure the model is available with `ollama pull gemma4:e2b`.
 
 ## Endpoint
 

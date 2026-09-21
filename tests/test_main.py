@@ -88,7 +88,7 @@ async def test_generates_insight_and_forwards_prompt() -> None:
     assert response.json() == {"aiGeneratedInsight": "Summary\n\nRecommendation: Do not recommend."}
     assert fake_client.request is not None
     body = json.loads(fake_client.request.read())
-    assert body["model"] == "qwen3.5:4b"
+    assert body["model"] == "gemma4:e2b"
     assert "Monica Selles" in body["prompt"]
     assert body["stream"] is False
     assert fake_client.closed is True
@@ -131,7 +131,7 @@ def test_generates_valid_weekly_notes_summary() -> None:
     assert response.json() == summary
     assert fake_client.request is not None
     body = json.loads(fake_client.request.read())
-    assert body["model"] == "qwen3.5:4b"
+    assert body["model"] == "gemma4:e2b"
     assert "Dennis" in body["prompt"]
     assert "2026-09-15" in body["prompt"]
     assert body["stream"] is False
