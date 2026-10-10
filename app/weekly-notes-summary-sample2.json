@@ -1,101 +1,112 @@
 {
     "clientName": "Gunningham, John",
     "reportPeriod": {
-        "startDate": "2026-10-08",
-        "endDate": "2026-10-10"
+        "startDate": "2026-10-04",
+        "endDate": "2026-10-09"
     },
     "summary": {
-        "overview": "Client was primarily asleep on 10/08 and 10/09 night shifts, then spent the day of 10/10 outdoors. On 10/09,the client engaged in active outdoor mobility, community outings, and self-care activities including shaving and sunscreen application.",
-        "totalVisitsDocumented": 4,
+        "overview": "Multiple caregiver visits over a six-day period with documented care activities and one documented concern.",
+        "totalVisitsDocumented": 10,
         "primaryCareNeeds": [
-            "Insulin management",
-            "Blood pressure medication reminders",
-            "Mobility support with front-wheeled walker",
-            "Incontinence care"
+            "Mobility support using FWW and electricwheelchair",
+            "Medication management (insulin, BP meds)",
+            "Knee pain management with ice packs and cream"
         ]
     },
     "careActivities": {
         "personalCare": [
-            "Shave using electric razor (requested by client)",
-            "Warm compress towel",
-            "Lotion and Vaseline application"
+            "Assisted with showers, dressing, and hygiene",
+            "Assisted with bowel and bladder needs (SBA)"
         ],
         "householdMaintenance": [
-            "Laundry",
-            "Sweeping and mopping floors",
-            "Cleaning bathroom and kitchen counter"
+            "Laundry, sweeping, mopping, trash removal",
+            "Meal preparation and cleanup"
         ],
         "nutrition": [
-            "Breakfast preparation and cleanup",
-            "Dinner: ribeye steak, mashed potatoes, onions (40% consumption)",
-            "Water and cheesecake provided"
+            "Breakfast, dinner, water intake support",
+            "Dietary intake documented at 40% for one meal"
         ],
         "mobilityAndCommunityEngagement": [
-            "Outdoor time with music",
-            "Community outing: Costco in Highland",
-            "Church visit in DT Redlands",
-            "Walking with front-wheeled walker",
-            "Ice application to knee"
+            "Walking with FWW and electric wheelchair",
+            "Community outings (Costco, Walmart, BJ's, Best Buy, church, Rialto, Dodger games)"
         ],
         "otherActivities": [
-            "Prepared clothes for Mass and confession",
-            "Baseball game watching",
-            "Insulin injection (12 units, self-administered)",
-            "Evening medication administration"
+            "Upper- and lower-body exercises (2 sets of 15 reps)",
+            "Massaging neck for reported pain"
         ]
     },
     "healthAndSafetyObservations": {
         "documentedPositiveObservations": [
-            "Client engaged in outdoor time and music",
-            "Client participated in community activities",
-            "Client performed self-administered insulin",
-            "Client ambulated with front-wheeled walker",
-            "Client managed incontinence independently"
+            "Client remained safe and mobile with assistance during community outings",
+            "Client engaged in social interaction, TV watching, and religious activities",
+            "Client followed medication schedules for insulin and BP meds"
         ],
-        "medicalConcernsReported": [],
+        "medicalConcernsReported": [
+            "Knee pain throughout the day (multiple shifts)",
+            "Neck pain (documented once)",
+            "Stomach pain reported on 10/04/2026"
+        ],
         "fallsOrIncidentsReported": [],
-        "medicationUpdatesReported": [],
-        "changesInConditionReported": [],
+        "medicationUpdatesReported": [
+            "Insulin (12 units) self-administered",
+            "BP medications administered with reminders"
+        ],
+        "changesInConditionReported": [
+            "Client slept most of the night on 10/09/2026 and 10/05/2026"
+        ],
         "notDocumented": [
-            "Sleep duration and quality (beyond 'slept for most of the night')",
-            "Medication adherence beyond reminders",
-            "Appetite changes",
-            "Hygiene needs beyond incontinence",
-            "Hydration levels beyond provided water",
-            "Mobility limitationsbeyond walker use"
+            "Exact blood sugar readings on 10/05/2026 (mentioned but not recorded)"
         ]
     },
-    "careConcernsAndFollowUp": [],
+    "careConcernsAndFollowUp": [
+        {
+            "concern": "Stomach pain reported by client on 10/04/2026",
+            "sourceDate": "2026-10-04",
+            "description": "Esquivel, Ana noted 'Father John not feeling to well stomach was hurting'",
+            "severity": "medium",
+            "recommendedAction": "Review with physician; consider nutritional or GI consult",
+            "requiresOwnerReview": true,
+            "requiresClinicalReview": true
+        },
+        {
+            "concern": "Repetitive documentation gaps across multiple shifts",
+            "sourceDate": "Multiple (10/04–10/09)",
+            "description": "Several notes contain [unclear], [unclear], and unspecified times/tasks (e.g., 'walked 3x followed by several [unclear] times', 'completed morning [unclear] of [unclear] hygiene', 'returned [unclear] to caregiver EOS')",
+            "severity": "low",
+            "recommendedAction": "Clarify unclear entries during next shift handover",
+            "requiresOwnerReview": false,
+            "requiresClinicalReview": false
+        }
+    ],
     "agencyOwnerReview": {
-        "overallStatus": "Routine care documented across multiple shifts with no urgent safety concerns.",
+        "overallStatus": "Stable with one moderate clinical concern and documentation quality issues",
         "completedCareHighlights": [
-            "Client engaged in meaningful community and outdoor activities on 10/09.",
-            "All scheduled medications (insulin and BP) were administered.",
-            "Mobility was supported with walker; no falls reported.",
-            "Household and personal care tasks were completed."
+            "Consistent mobility and community engagement throughout the week",
+            "Medication adherencedocumented across shifts",
+            "Home safety and meal support completed"
         ],
         "documentationGaps": [
-            "10/09 visit: End time is 3:00 PM; 10/10 visit: End time not documented.",
-            "10/09 visit: Reason for shift end not specified; replacement caregiver not documented."
+            "Blood sugar values from 10/05/2026 not recorded",
+            "Unclear activities noted in multiple shifts (10/07, 10/09, 10/08)",
+            "Shift end times or handoff notes missing in some entries"
         ],
         "itemsToMonitor": [
-            "Knee condition and ice application need ongoing observation.",
-            "Insulin dosing continues to be self-administered; verify no dose discrepancies."
+            "Neck and stomach pain (requiresclinical follow-up)",
+            "Knee pain frequency and response to ice/cream"
         ],
         "recommendedFollowUp": [
-            "Confirm 10/10 visit end time and total care duration.",
-            "Document any observed changes in appetite, mobility, or incontinence."
+            "Schedule a clinical review for the stomach pain documented on 10/04/2026",
+            "Instruct caregivers to complete all activity logs with specific details"
         ]
     },
     "documentationMetadata": {
-        "sourceNoteCount": 4,
-        "clientReadStatus": "Partially documented; some notes are brief or use informal language.",
-        "reportGeneratedDate": "2026-10-11",
+        "sourceNoteCount": 10,
+        "clientReadStatus": "Documented",
+        "reportGeneratedDate": "2026-10-09",
         "dataLimitations": [
-            "Client name includes honorific 'Fr.' but not all notes include it.",
-            "Shift handoff communications are recorded but not all details are explicit.",
-            "Client's sleep duration on 10/10 is not documented.",
-            "Specific times for some activities are approximate rather than exact."
+            "Client name appears as 'Fr. John' in multiple entries",
+            "Some entries lack shift end times or clear handoff information",
+            "Some dates appear inconsistent within individual notes (e.g., 10/09 vs. 10/08/26)"
         ]
     }
 }
