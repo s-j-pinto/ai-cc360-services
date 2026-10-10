@@ -4,7 +4,13 @@ import httpx
 import pytest
 from fastapi.testclient import TestClient
 
-from app.main import WeeklyNotesRequest, app, build_weekly_notes_prompt, get_ollama_client
+from app.main import (
+    WeeklyNotesRequest,
+    app,
+    build_weekly_notes_prompt,
+    get_ollama_client,
+    log_ollama_generation,
+)
 
 
 class FakeOllamaClient:
@@ -72,6 +78,23 @@ def test_builds_prompt_from_upstream_weekly_notes_envelope() -> None:
     assert "Client ID: 204190" in prompt
     assert '"userName": "Pulido, Cristal"' in prompt
     assert "Client attended a community outing and Mass." in prompt
+
+
+def test_logs_ollama_token_usage(caplog: pytest.LogCaptureFixture) -> None:
+    log_ollama_generation(
+        "/api/weekly-notes-summary",
+        {
+            "prompt_eval_count": 321,
+            "eval_count": 123,
+            "done_reason": "stop",
+            "total_duration": 456000000,
+        },
+    )
+
+    assert "prompt_tokens=321" in caplog.text
+    assert "output_tokens=123" in caplog.text
+    assert "done_reason=stop" in caplog.text
+    assert "total_duration_ns=456000000" in caplog.text
 
 
 @pytest.mark.asyncio

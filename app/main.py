@@ -1,4 +1,6 @@
 import json
+import logging
+from pathlib import Path
 from typing import Annotated, Any, Literal
 
 import httpx
@@ -6,6 +8,19 @@ from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+logger = logging.getLogger("app.ollama")
+logger.setLevel(logging.INFO)
+log_file = Path(__file__).resolve().parent.parent / "fastapi.out.log"
+if not any(
+    isinstance(handler, logging.FileHandler)
+    and Path(handler.baseFilename) == log_file
+    for handler in logger.handlers
+):
+    file_handler = logging.FileHandler(log_file)
+    file_handler.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(message)s"))
+    logger.addHandler(file_handler)
 
 
 class Settings(BaseSettings):
@@ -144,6 +159,18 @@ def get_ollama_client() -> httpx.AsyncClient:
 Client = Annotated[httpx.AsyncClient, Depends(get_ollama_client)]
 
 
+def log_ollama_generation(endpoint: str, result: dict[str, Any]) -> None:
+    logger.info(
+        "Ollama generation completed endpoint=%s prompt_tokens=%s output_tokens=%s "
+        "done_reason=%s total_duration_ns=%s",
+        endpoint,
+        result.get("prompt_eval_count", "unavailable"),
+        result.get("eval_count", "unavailable"),
+        result.get("done_reason", "unavailable"),
+        result.get("total_duration", "unavailable"),
+    )
+
+
 def build_prompt(candidate: CaregiverProfile) -> str:
     summary = candidate.summary or "Not provided"
     return f"""You are an expert HR assistant for a home care agency. Your task is to analyze a caregiver candidate's profile and the notes from their phone screen to provide a single, combined insight containing a summary and a hiring recommendation.
@@ -249,6 +276,7 @@ async def caregiver_insight(candidate: CaregiverProfile, client: Client) -> Insi
         response = await client.post(f"{settings.ollama_base_url}/api/generate", json=request_body)
         response.raise_for_status()
         ollama_result: dict[str, Any] = response.json()
+        log_ollama_generation("/api/caregiver-insight", ollama_result)
     except (httpx.HTTPError, ValueError) as error:
         raise HTTPException(status_code=502, detail="Ollama request failed") from error
     finally:
@@ -277,6 +305,7 @@ async def weekly_notes_summary(request: WeeklyNotesRequest, client: Client) -> W
         response = await client.post(f"{settings.ollama_base_url}/api/generate", json=request_body)
         response.raise_for_status()
         ollama_result: dict[str, Any] = response.json()
+        log_ollama_generation("/api/weekly-notes-summary", ollama_result)
         raw_summary = ollama_result.get("response")
         if not isinstance(raw_summary, str):
             raise ValueError("Ollama response is not a JSON string")
