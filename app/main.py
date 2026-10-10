@@ -207,7 +207,6 @@ You will receive multiple caregiver visit notes containing some or all of the fo
 Instructions:
 1. Identify the reporting period from the supplied notes.
 2. Summarize the client's care activities across all visits.
-3. Organize each visit by date, caregiver, and documented activities.
 4. Identify documented observations about the client's condition, mood, mobility, appetite, hygiene, and participation.
 5. Identify explicitly documented care concerns, safety issues, incidents, missed tasks, or changes in condition.
 6. Identify follow-up actions supported by the notes.
