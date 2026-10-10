@@ -231,7 +231,7 @@ Rules for care concerns and severity:
 - An empty array means no such issue was documented; it does not mean the issue was definitively absent.
 
 Return an object with exactly these top-level keys and matching value types:
-clientName, reportPeriod, summary, visitSummary, careActivities, healthAndSafetyObservations, careConcernsAndFollowUp, agencyOwnerReview, documentationMetadata.
+clientName, reportPeriod, summary, careActivities, healthAndSafetyObservations, careConcernsAndFollowUp, agencyOwnerReview, documentationMetadata.
 
 Caregiver visit notes:
 Client name: {request.clientName or "Not provided"}
