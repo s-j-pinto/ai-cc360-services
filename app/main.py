@@ -81,16 +81,6 @@ class Summary(BaseModel):
     primaryCareNeeds: list[str]
 
 
-class VisitSummary(BaseModel):
-    date: str
-    caregiver: str
-    scheduledStartTime: str | None = None
-    scheduledEndTime: str | None = None
-    activitiesCompleted: list[str]
-    clientObservations: list[str]
-    shiftNotes: str
-    concernsReported: list[str]
-    followUpRequired: bool
 
 
 class CareActivities(BaseModel):
@@ -139,7 +129,6 @@ class WeeklyNotesSummary(BaseModel):
     clientName: str
     reportPeriod: ReportPeriod
     summary: Summary
-    visitSummary: list[VisitSummary]
     careActivities: CareActivities
     healthAndSafetyObservations: HealthAndSafetyObservations
     careConcernsAndFollowUp: list[CareConcernAndFollowUp]
