@@ -11,7 +11,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     ollama_base_url: str = "http://127.0.0.1:8080"
     ollama_model: str = "hf.co/empero-ai/Qwen3.8-4B-Distill-GGUF:Q4_K_M"
-    ollama_timeout_seconds: float = 300.0
+    ollama_timeout_seconds: float = 600.0
     ollama_num_ctx: int = 8192
     ollama_num_predict: int = 16384
     cors_allowed_origins: str = "*"
