@@ -112,7 +112,6 @@ def test_generates_valid_weekly_notes_summary() -> None:
         "clientName": "Dennis",
         "reportPeriod": {"startDate": "2026-09-10", "endDate": "2026-09-14"},
         "summary": {"overview": "Documented household and meal support.", "totalVisitsDocumented": 2, "primaryCareNeeds": ["Household support"]},
-        "visitSummary": [],
         "careActivities": {"personalCare": [], "householdMaintenance": [], "nutrition": [], "mobilityAndCommunityEngagement": [], "otherActivities": []},
         "healthAndSafetyObservations": {"documentedPositiveObservations": [], "medicalConcernsReported": [], "fallsOrIncidentsReported": [], "medicationUpdatesReported": [], "changesInConditionReported": [], "notDocumented": ["Mood"]},
         "careConcernsAndFollowUp": [],

@@ -1,0 +1,91 @@
+{
+    "clientName": "Gunningham, John",
+    "reportPeriod": {
+        "startDate": "2026-09-17",
+        "endDate": "2026-09-17"
+    },
+    "summary": {
+        "overview": "A community outing and religious activity was attended by the client.",
+        "totalVisitsDocumented": 1,
+        "primaryCareNeeds": [
+            "Community engagement",
+            "Religious participation"
+        ]
+    },
+    "visitSummary": [
+        {
+            "date": "2026-09-17",
+            "caregiver": "Pulido, Cristal",
+            "scheduledStartTime": null,
+            "scheduledEndTime": null,
+            "activitiesCompleted": [
+                "Community outing",
+                "Mass attendance"
+            ],
+            "clientObservations": [
+                "Participated in community outing",
+                "Attended Mass"
+            ],
+            "shiftNotes": "No shift change documented.",
+            "concernsReported": [],
+            "followUpRequired": false
+        }
+    ],
+    "careActivities": {
+        "personalCare": [],
+        "householdMaintenance": [],
+        "nutrition": [],
+        "mobilityAndCommunityEngagement": [
+            "Attended a community outing"
+        ],
+        "otherActivities": [
+            "Attended Mass"
+        ]
+    },
+    "healthAndSafetyObservations": {
+        "documentedPositiveObservations": [
+            "Client participated in community outing",
+            "Client attended Mass"
+        ],
+        "medicalConcernsReported": [],
+        "fallsOrIncidentsReported": [],
+        "medicationUpdatesReported": [],
+        "changesInConditionReported": [],
+        "notDocumented": [
+            "Client's current level of mobility",
+            "Client's current level of alertness",
+            "Client's appetite and hydration",
+            "Client's hygiene status"
+        ]
+    },
+    "careConcernsAndFollowUp": [],
+    "agencyOwnerReview": {
+        "overallStatus": "No urgent concerns. A brief visit for community engagement was documented.",
+        "completedCareHighlights": [
+            "Community outing facilitated",
+            "Religious activity supported"
+        ],
+        "documentationGaps": [
+            "Visit end time not documented",
+            "No other care activities recorded (no meals, personal care, mobility)"
+        ],
+        "itemsToMonitor": [
+            "Client's mobility status",
+            "Client's appetite and hydration",
+            "Client's alertness and orientation"
+        ],
+        "recommendedFollowUp": [
+            "Complete documentation on the visit date to include a visit end time",
+            "Review if the client requires additional support in daily living activities"
+        ]
+    },
+    "documentationMetadata": {
+        "sourceNoteCount": 1,
+        "clientReadStatus": "Not yet documented",
+        "reportGeneratedDate": "2026-09-17",
+        "dataLimitations": [
+            "No documented visit end time; total visit duration unknown",
+            "No other daily care activities documented; full picture of daily routine is not known"
+        ]
+    }
+}%    
