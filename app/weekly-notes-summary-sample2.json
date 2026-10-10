@@ -1,91 +1,101 @@
 {
     "clientName": "Gunningham, John",
     "reportPeriod": {
-        "startDate": "2026-09-17",
-        "endDate": "2026-09-17"
+        "startDate": "2026-10-08",
+        "endDate": "2026-10-10"
     },
     "summary": {
-        "overview": "A community outing and religious activity was attended by the client.",
-        "totalVisitsDocumented": 1,
+        "overview": "Client was primarily asleep on 10/08 and 10/09 night shifts, then spent the day of 10/10 outdoors. On 10/09,the client engaged in active outdoor mobility, community outings, and self-care activities including shaving and sunscreen application.",
+        "totalVisitsDocumented": 4,
         "primaryCareNeeds": [
-            "Community engagement",
-            "Religious participation"
+            "Insulin management",
+            "Blood pressure medication reminders",
+            "Mobility support with front-wheeled walker",
+            "Incontinence care"
         ]
     },
-    "visitSummary": [
-        {
-            "date": "2026-09-17",
-            "caregiver": "Pulido, Cristal",
-            "scheduledStartTime": null,
-            "scheduledEndTime": null,
-            "activitiesCompleted": [
-                "Community outing",
-                "Mass attendance"
-            ],
-            "clientObservations": [
-                "Participated in community outing",
-                "Attended Mass"
-            ],
-            "shiftNotes": "No shift change documented.",
-            "concernsReported": [],
-            "followUpRequired": false
-        }
-    ],
     "careActivities": {
-        "personalCare": [],
-        "householdMaintenance": [],
-        "nutrition": [],
+        "personalCare": [
+            "Shave using electric razor (requested by client)",
+            "Warm compress towel",
+            "Lotion and Vaseline application"
+        ],
+        "householdMaintenance": [
+            "Laundry",
+            "Sweeping and mopping floors",
+            "Cleaning bathroom and kitchen counter"
+        ],
+        "nutrition": [
+            "Breakfast preparation and cleanup",
+            "Dinner: ribeye steak, mashed potatoes, onions (40% consumption)",
+            "Water and cheesecake provided"
+        ],
         "mobilityAndCommunityEngagement": [
-            "Attended a community outing"
+            "Outdoor time with music",
+            "Community outing: Costco in Highland",
+            "Church visit in DT Redlands",
+            "Walking with front-wheeled walker",
+            "Ice application to knee"
         ],
         "otherActivities": [
-            "Attended Mass"
+            "Prepared clothes for Mass and confession",
+            "Baseball game watching",
+            "Insulin injection (12 units, self-administered)",
+            "Evening medication administration"
         ]
     },
     "healthAndSafetyObservations": {
         "documentedPositiveObservations": [
-            "Client participated in community outing",
-            "Client attended Mass"
+            "Client engaged in outdoor time and music",
+            "Client participated in community activities",
+            "Client performed self-administered insulin",
+            "Client ambulated with front-wheeled walker",
+            "Client managed incontinence independently"
         ],
         "medicalConcernsReported": [],
         "fallsOrIncidentsReported": [],
         "medicationUpdatesReported": [],
         "changesInConditionReported": [],
         "notDocumented": [
-            "Client's current level of mobility",
-            "Client's current level of alertness",
-            "Client's appetite and hydration",
-            "Client's hygiene status"
+            "Sleep duration and quality (beyond 'slept for most of the night')",
+            "Medication adherence beyond reminders",
+            "Appetite changes",
+            "Hygiene needs beyond incontinence",
+            "Hydration levels beyond provided water",
+            "Mobility limitationsbeyond walker use"
         ]
     },
     "careConcernsAndFollowUp": [],
     "agencyOwnerReview": {
-        "overallStatus": "No urgent concerns. A brief visit for community engagement was documented.",
+        "overallStatus": "Routine care documented across multiple shifts with no urgent safety concerns.",
         "completedCareHighlights": [
-            "Community outing facilitated",
-            "Religious activity supported"
+            "Client engaged in meaningful community and outdoor activities on 10/09.",
+            "All scheduled medications (insulin and BP) were administered.",
+            "Mobility was supported with walker; no falls reported.",
+            "Household and personal care tasks were completed."
         ],
         "documentationGaps": [
-            "Visit end time not documented",
-            "No other care activities recorded (no meals, personal care, mobility)"
+            "10/09 visit: End time is 3:00 PM; 10/10 visit: End time not documented.",
+            "10/09 visit: Reason for shift end not specified; replacement caregiver not documented."
         ],
         "itemsToMonitor": [
-            "Client's mobility status",
-            "Client's appetite and hydration",
-            "Client's alertness and orientation"
+            "Knee condition and ice application need ongoing observation.",
+            "Insulin dosing continues to be self-administered; verify no dose discrepancies."
         ],
         "recommendedFollowUp": [
-            "Complete documentation on the visit date to include a visit end time",
-            "Review if the client requires additional support in daily living activities"
+            "Confirm 10/10 visit end time and total care duration.",
+            "Document any observed changes in appetite, mobility, or incontinence."
         ]
     },
     "documentationMetadata": {
-        "sourceNoteCount": 1,
-        "clientReadStatus": "Not yet documented",
-        "reportGeneratedDate": "2026-09-17",
+        "sourceNoteCount": 4,
+        "clientReadStatus": "Partially documented; some notes are brief or use informal language.",
+        "reportGeneratedDate": "2026-10-11",
         "dataLimitations": [
-            "No documented visit end time; total visit duration unknown",
-            "No other daily care activities documented; full picture of daily routine is not known"
+            "Client name includes honorific 'Fr.' but not all notes include it.",
+            "Shift handoff communications are recorded but not all details are explicit.",
+            "Client's sleep duration on 10/10 is not documented.",
+            "Specific times for some activities are approximate rather than exact."
         ]
     }
-}%    
+}

@@ -136,4 +136,5 @@ def test_generates_valid_weekly_notes_summary() -> None:
     assert body["stream"] is False
     assert body["format"]["type"] == "object"
     assert "careActivities" in body["format"]["properties"]
+    assert body["options"]["num_ctx"] == 8192
     assert body["options"]["num_predict"] == 16384

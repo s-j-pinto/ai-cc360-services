@@ -1,0 +1,80 @@
+
+    curl -X POST http: //localhost:8000/api/weekly-notes-summary \
+        -H "Content-Type: application/json" \
+        -d '{
+    "clientName": "Gunningham, John",
+    "clientId": "204190",
+    "visitNotes": [
+        {
+            "date": "10/10/2026 07:02 AM",
+            "userName": "Esquivel, Ana",
+            "notesMessage": "Visit 10/09/2026 11:00 PM: Slept for the most part Started cooking breakfast at 5 Laundry clean the bathroom"
+        },
+        {
+            "date": "10/09/2026 03:03 PM",
+            "userName": "Pulido, Cristal",
+            "notesMessage": "Visit 10/09/2026 07:00 AM: Caregiver: Cristal Pulido Client: Fr. John Date: 10/09/26 Shift: 7:00 AM – 3:00 PM Upon arrival, Fr. John was preparing to take his insulin. Provided medication reminders for his blood pressure medications. Assisted with breakfast preparation and cleanup. After breakfast, completed upper- and lower-body exercises, performing 2 sets of 15 repetitions each. Applied sunscreen and mosquito repellent before encouraging Fr. John to spend time outdoors. Assisted with walking using his front-wheeled walker (FWW). At his request, assisted with shaving using an electric razor, followed by a warm compress towel and application of lotion and Vaseline. At 11:00 AM, accompanied Fr. John on a community outing to Costco in Highland and then to the church in DT Redlands. Upon returning home, assisted with walking and applied ice to his knee. Provided water and a slice of cheesecake, with repeated reminders to drink water throughout the shift. Prepared the clothes needed for Mass and confession. Spent time outdoors with Fr. John, playing music until the end of the shift at 3:00 PM."
+        },
+        {
+            "date": "10/09/2026 07:05 AM",
+            "userName": "Woodson, Mercedes",
+            "notesMessage": "Visit 10/08/2026 11:00 PM: I arrived for the 11 PM shift and received report from Sylvia father John was sleeping when I got here. Father John remain sleep the whole night he got up around 6:30 AM. I assisted him to the shower and I assisted him with getting dressed as needed, and I have put his clothes to wash. I passed down report to the oncoming caregiver for the morning. That’s why the John was there anything else he needed he said no signing off."
+        },
+        {
+            "date": "10/08/2026 10:37 PM",
+            "userName": "Pelealu, Sylvia",
+            "notesMessage": "Visit 10/08/2026 03:00 PM: Caregiver Notes – Thursday, 10/08/2026 Caregiver: Sylvia P. Pelealu Client: Fr. John Shift: 3:00 PM – 11:00 PM 2:58 PM – Arrived for my shift. Upon arrival, Fr. John was sitting in his recliner chair. I greeted Fr. John and Raquel. 3:10 PM – Assisted Fr. John to the bathroom. Helped him pull down and pull up his brief and shorts, then assisted him back to his recliner chair. 3:40 PM – Completed light housekeeping, including sweeping and mopping the floors and cleaning the bathroom and kitchen counter. 4:00 PM – Fr. John self-administered his insulin injection (12 units) and took his evening medications. 4:10 PM – Fr. John ate his dinner, consisting of ribeye steak, mashed potatoes, and onions. He ate approximately 40% of his meal. 4:45 PM – Fr. John went outside using his electric wheelchair. He returned inside around 5:00 PM, and I assisted him to the bathroom. Helped him pull down and pull up his brief and shorts, then assisted him back to his recliner chair. Fr. John continued watching a baseball game and fall asleep. 9:47 PM – Assisted Fr. John to the bathroom. 10:30 PM – Took out the trash. 11:00 PM – End of shift."
+        },
+        {
+            "date": "10/08/2026 02:51 PM",
+            "userName": "Koemans, Raquel",
+            "notesMessage": "Visit 10/08/2026 07:00 AM: Upon arrival, Father In restroom helped him onto the toilet and back to chair then transfer to electric chair and went outside till 8:15 AM. Then left to doctors doctors at 10:30. Went to have lunch then went to the eye doctor and then Walgreens then back home got mail and finish laundry, then sat in the recliner to rest. I massaged his stump, then watch TV end of shift watching TV and sleeping."
+        },
+        {
+            "date": "10/08/2026 07:09 AM",
+            "userName": "Woodson, Mercedes",
+            "notesMessage": "Visit 10/07/2026 11:00 PM: I arrived at 11 PM and received shift report from Anna. I assisted father John to the bathroom and then back to his recliner where he remains asleep until 3 AM. I assisted father John to the restroom again around 3:30 AM and then back to his chair. , father John about 5am With his shower and getting dressed for his appointment today. I washed clothes and put them in the dryer, light housekeeping in the bathroom And I took out all the trash. I asked why the John if there was anything else that he would need my assistance with before leaving he said no."
+        },
+        {
+            "date": "10/07/2026 03:06 PM",
+            "userName": "Pulido, Cristal",
+            "notesMessage": "Visit 10/07/2026 07:00 AM: Caregiver Note Client: Cristal Pulido Caregiver: Fr. John Date: 10/07/24 Shift: 7:00 AM – 3:00 PM Upon arrival, spouse to CC and Fr. was in completing dressing and clothes selection in bedroom. 7:15 AM: Made client a hot tea. 7:30 AM: Went outside. Applied mosquito spray to all body; sunscreen was applied to neck and knees. 8:15 AM: Worked on walking using [unclear] walker, walked 3x followed by several [unclear] times. Then applied ice for 15 minutes to knee. Continued to spend time outside. Assisted with mosquito spray and sunscreen. 10:05 AM: Client went on a walk to Walmart in Redlands. Lunch is cooking. Returned home at 12:30 PM. Assisted client to lying position in recliner with legs elevated along with both legs elevated. Applied cream to knee followed by ice packs and TV. Client completed toilet bygones. Fr. was off at 2:30 PM. Directed client to turn on dodger game . Assisted client up to go to toilet. Client completed morning [unclear] of [unclear] hygiene. Monitored for [unclear]. At 2:50 PM, returned [unclear] to caregiver EOS got 3:00 PM."
+        },
+        {
+            "date": "10/07/2026 06:37 AM",
+            "userName": "Koemans, Raquel",
+            "notesMessage": "Visit 10/06/2026 11:00 PM: Upon arrival, Father sleeping woke up at 1 AM. Went to restroom back to sleep often on watching TV woke up at 5 AM. Went to restroom and shower. Got ready for the day started and finished breakfast as well as laundry Father watching Reba and the shift Father in chair."
+        },
+        {
+            "date": "10/06/2026 11:02 PM",
+            "userName": "Esquivel, Ana",
+            "notesMessage": "Visit 10/06/2026 03:00 PM: Father John had me watching the games 2 at that go dodgers Slept most of the day"
+        },
+        {
+            "date": "10/06/2026 02:55 PM",
+            "userName": "Koemans, Raquel",
+            "notesMessage": "Visit 10/06/2026 07:00 AM: Beginning of Sherrie’s father outside and chair PT came a little after eight worked with him for 45 minutes then he rolled around then did his ballot until the nurse came. Nurse came at 10:43 AM to check on him after we left for an outing to Rialto then came back at 2:30 PM. Father used restroom then gotten recliner and took insulin turned on Baseball waiting for the game to come on at 3 PM and the shift Father waiting for a game to come on"
+        },
+        {
+            "date": "10/06/2026 06:59 AM",
+            "userName": "Koemans, Raquel",
+            "notesMessage": "Visit 10/05/2026 11:00 PM: Upon arrival, Father sleeping woke up at 12:15 AM to use the restroom and went back to sleep. Woke up at 3 AM. Went to restroom back to sleep. Woke up at 4:45 to get ready for the day showered had breakfast started and finish laundry and put away end of shift Father outside in chair."
+        },
+        {
+            "date": "10/05/2026 11:01 PM",
+            "userName": "Esquivel, Ana",
+            "notesMessage": "Visit 10/05/2026 03:00 PM: Helped father John with dinner Reminder of meds Read his sugar readings Helped with bathroom Gave father john a massage he had pain in the neck after that he slept the rest of my shift Cleaned up after dinner"
+        },
+        {
+            "date": "10/05/2026 03:00 PM",
+            "userName": "Pulido, Cristal",
+            "notesMessage": "Visit 10/05/2026 07:00 AM: Client: Fr. John Caregiver: Cristel Pulido Date: 10/05/26 Shift: 7:00 AM–3:00 PM Upon arrival at 7:00 AM, Fr. John approached me outside and we chatted. Completed upper- and lower-body exercises and walked 13 steps using FWW. Fr. John complained of knee pain throughout the day. Applied an ice pack twice for 15 minutes each. Assisted in the restroom with SBA for safety. Completed laundry. At 10:00 AM, went on a community outing for lunch at BJ’s, then went to Best Buy in SB. Returned home at approximately 2:00 PM. Provided medication reminder and water-intake reminder. Completed light housekeeping and motivated Fr. John to complete personal care IADLs. 3:00 PM – EOS."
+        },
+        {
+            "date": "10/05/2026 07:01 AM",
+            "userName": "Esquivel, Ana",
+            "notesMessage": "Visit 10/04/2026 11:00 PM: Father John not feeling to well stomach was hurting"
+        }
+    ]
+}'
+  

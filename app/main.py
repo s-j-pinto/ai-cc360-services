@@ -12,6 +12,7 @@ class Settings(BaseSettings):
     ollama_base_url: str = "http://127.0.0.1:8080"
     ollama_model: str = "hf.co/empero-ai/Qwen3.8-4B-Distill-GGUF:Q4_K_M"
     ollama_timeout_seconds: float = 300.0
+    ollama_num_ctx: int = 8192
     ollama_num_predict: int = 16384
     cors_allowed_origins: str = "*"
 
@@ -267,7 +268,10 @@ async def weekly_notes_summary(request: WeeklyNotesRequest, client: Client) -> W
         "stream": False,
         "think": False,
         "format": WeeklyNotesSummary.model_json_schema(),
-        "options": {"num_predict": settings.ollama_num_predict},
+        "options": {
+            "num_ctx": settings.ollama_num_ctx,
+            "num_predict": settings.ollama_num_predict,
+        },
     }
     try:
         response = await client.post(f"{settings.ollama_base_url}/api/generate", json=request_body)
