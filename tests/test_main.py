@@ -78,6 +78,10 @@ def test_builds_prompt_from_upstream_weekly_notes_envelope() -> None:
     assert "Client ID: 204190" in prompt
     assert '"userName": "Pulido, Cristal"' in prompt
     assert "Client attended a community outing and Mass." in prompt
+    assert "predictiveHealthAnalytics" in prompt
+    assert "potentialUTIRelatedIndicators" in prompt
+    assert "cognition changes alone are not sufficient evidence" in prompt
+    assert "approximately 2,000 tokens or fewer" in prompt
 
 
 def test_logs_ollama_token_usage(caplog: pytest.LogCaptureFixture) -> None:
@@ -137,6 +141,7 @@ def test_generates_valid_weekly_notes_summary() -> None:
         "summary": {"overview": "Documented household and meal support.", "totalVisitsDocumented": 2, "primaryCareNeeds": ["Household support"]},
         "careActivities": {"personalCare": [], "householdMaintenance": [], "nutrition": [], "mobilityAndCommunityEngagement": [], "otherActivities": []},
         "healthAndSafetyObservations": {"documentedPositiveObservations": [], "medicalConcernsReported": [], "fallsOrIncidentsReported": [], "medicationUpdatesReported": [], "changesInConditionReported": [], "notDocumented": ["Mood"]},
+        "predictiveHealthAnalytics": {"weeklySummary": "No indicators documented in the available notes.", "cognitiveAndBehavioralChanges": [], "potentialUTIRelatedIndicators": [], "fallAndMobilityRisks": [], "nutritionAndHydrationRisks": []},
         "careConcernsAndFollowUp": [],
         "agencyOwnerReview": {"overallStatus": "Review documentation", "completedCareHighlights": [], "documentationGaps": [], "itemsToMonitor": [], "recommendedFollowUp": []},
         "documentationMetadata": {"sourceNoteCount": 2, "clientReadStatus": "Not documented", "reportGeneratedDate": "2026-09-15", "dataLimitations": []},
@@ -159,5 +164,12 @@ def test_generates_valid_weekly_notes_summary() -> None:
     assert body["stream"] is False
     assert body["format"]["type"] == "object"
     assert "careActivities" in body["format"]["properties"]
+    assert "predictiveHealthAnalytics" in body["format"]["properties"]
+    assert (
+        body["format"]["$defs"]["PredictiveHealthAnalytics"]["properties"][
+            "potentialUTIRelatedIndicators"
+        ]["maxItems"]
+        == 3
+    )
     assert body["options"]["num_ctx"] == 8192
-    assert body["options"]["num_predict"] == 16384
+    assert body["options"]["num_predict"] == 2200

@@ -12,6 +12,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 logger = logging.getLogger("app.ollama")
 logger.setLevel(logging.INFO)
+WEEKLY_NOTES_MAX_OUTPUT_TOKENS = 2200
 log_file = Path(__file__).resolve().parent.parent / "fastapi.out.log"
 if not any(
     isinstance(handler, logging.FileHandler)
@@ -116,6 +117,14 @@ class HealthAndSafetyObservations(BaseModel):
     notDocumented: list[str]
 
 
+class PredictiveHealthAnalytics(BaseModel):
+    weeklySummary: str
+    cognitiveAndBehavioralChanges: list[str] = Field(max_length=3)
+    potentialUTIRelatedIndicators: list[str] = Field(max_length=3)
+    fallAndMobilityRisks: list[str] = Field(max_length=3)
+    nutritionAndHydrationRisks: list[str] = Field(max_length=3)
+
+
 class CareConcernAndFollowUp(BaseModel):
     concern: str
     sourceDate: str
@@ -147,6 +156,7 @@ class WeeklyNotesSummary(BaseModel):
     summary: Summary
     careActivities: CareActivities
     healthAndSafetyObservations: HealthAndSafetyObservations
+    predictiveHealthAnalytics: PredictiveHealthAnalytics
     careConcernsAndFollowUp: list[CareConcernAndFollowUp]
     agencyOwnerReview: AgencyOwnerReview
     documentationMetadata: DocumentationMetadata
@@ -227,15 +237,21 @@ Instructions:
 4. Identify documented observations about the client's condition, mood, mobility, appetite, hygiene, and participation.
 5. Identify explicitly documented care concerns, safety issues, incidents, missed tasks, or changes in condition.
 6. Identify follow-up actions supported by the notes.
-7. Highlight incomplete documentation, such as missing visit end times or unclear shift changes.
-8. Do not invent facts, diagnoses, medications, symptoms, care needs, or incidents.
-9. Do not infer a medical condition or conclude that the client is safe or healthy solely because no concern was documented.
-10. Distinguish documented facts, potential follow-up, and not documented information.
-11. Preserve unclear notes as closely as possible and flag them for review.
-12. If a shift ended early, identify the early departure and documented reason or replacement caregiver. Do not assume care was fully covered.
-13. Use reporting dates in YYYY-MM-DD format.
-14. Return valid JSON only. Do not include Markdown, explanations, or text outside the JSON object.
-15. Keep the JSON concise enough to finish generation: use short phrases, no more than 3 items in each list when possible, and no more than 2 sentences per narrative field. Do not repeat the source notes verbatim.
+7. In predictiveHealthAnalytics, review the week's notes for potential early warning indicators and supported changes or patterns. Include only observed evidence, with dates when available; do not predict unsupported outcomes. Evaluate:
+   - Cognitive/behavioral: confusion or disorientation, caregiver-noted memory or communication changes, difficulty following instructions, agitation, withdrawal, personality changes, reduced familiar-activity participation, or sleep/routine changes.
+   - Potential UTI-related: documented urinary frequency or incontinence changes, pain during urination, urine appearance/odor, fever, other acute-illness signs, or sudden cognition/behavior changes. Do not diagnose UTI; cognition changes alone are not sufficient evidence.
+   - Fall/mobility: unsteady gait/balance, difficulty standing/transferring/walking, falls/near misses, mobility changes, increased assistance, environmental hazards, dizziness, or weakness.
+   - Nutrition/hydration: reduced appetite/intake, missed meals, reduced fluids, weight changes, eating/swallowing difficulty, or repeated poor intake.
+   Use no more than 3 concise dated indicators per category. Empty lists mean no indicators were documented, not that risks are absent. Mention material data gaps in the weekly summary.
+8. Highlight incomplete documentation, such as missing visit end times or unclear shift changes.
+9. Do not invent facts, diagnoses, medications, symptoms, care needs, or incidents.
+10. Do not infer a medical condition or conclude that the client is safe or healthy solely because no concern was documented.
+11. Distinguish documented facts, potential follow-up, and not documented information.
+12. Preserve unclear notes as closely as possible and flag them for review.
+13. If a shift ended early, identify the early departure and documented reason or replacement caregiver. Do not assume care was fully covered.
+14. Use reporting dates in YYYY-MM-DD format.
+15. Return valid JSON only. Do not include Markdown, explanations, or text outside the JSON object.
+16. Keep the entire JSON to approximately 2,000 tokens or fewer. Use short phrases, no more than 3 items per list, and no more than 2 sentences per narrative field. Omit repetition; never copy source notes verbatim.
 
 Rules for care concerns and severity:
 - Use "none" when no concern is documented and no follow-up is indicated.
@@ -248,7 +264,9 @@ Rules for care concerns and severity:
 - An empty array means no such issue was documented; it does not mean the issue was definitively absent.
 
 Return an object with exactly these top-level keys and matching value types:
-clientName, reportPeriod, summary, careActivities, healthAndSafetyObservations, careConcernsAndFollowUp, agencyOwnerReview, documentationMetadata.
+clientName, reportPeriod, summary, careActivities, healthAndSafetyObservations, predictiveHealthAnalytics, careConcernsAndFollowUp, agencyOwnerReview, documentationMetadata.
+
+predictiveHealthAnalytics must contain exactly: weeklySummary, cognitiveAndBehavioralChanges, potentialUTIRelatedIndicators, fallAndMobilityRisks, nutritionAndHydrationRisks. Use one concise sentence for weeklySummary and strings for each list item.
 
 Caregiver visit notes:
 Client name: {request.clientName or "Not provided"}
@@ -298,7 +316,7 @@ async def weekly_notes_summary(request: WeeklyNotesRequest, client: Client) -> W
         "format": WeeklyNotesSummary.model_json_schema(),
         "options": {
             "num_ctx": settings.ollama_num_ctx,
-            "num_predict": settings.ollama_num_predict,
+            "num_predict": min(settings.ollama_num_predict, WEEKLY_NOTES_MAX_OUTPUT_TOKENS),
         },
     }
     try:

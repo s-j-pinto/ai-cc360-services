@@ -48,4 +48,4 @@ curl -X POST http://localhost:8000/api/weekly-notes-summary \
 	}'
 ```
 
-The endpoint returns the validated JSON summary object. When provided, `reportDate` must use `YYYY-MM-DD` format. Legacy plain-text `visitNotes` input remains accepted.
+The endpoint returns the validated JSON summary object, including evidence-based weekly predictive health analytics for cognitive/behavioral, potential UTI-related, fall/mobility, and nutrition/hydration indicators. It does not diagnose conditions; indicators must be documented in the notes. Output is kept concise (approximately 2,000 tokens, with a default generation limit of 2,200). When provided, `reportDate` must use `YYYY-MM-DD` format. Legacy plain-text `visitNotes` input remains accepted.
