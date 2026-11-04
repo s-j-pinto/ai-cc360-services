@@ -92,6 +92,7 @@ def test_logs_ollama_token_usage(caplog: pytest.LogCaptureFixture) -> None:
             "eval_count": 123,
             "done_reason": "stop",
             "total_duration": 456000000,
+            "response": '{"summary":"Generated text"}',
         },
     )
 
@@ -99,6 +100,7 @@ def test_logs_ollama_token_usage(caplog: pytest.LogCaptureFixture) -> None:
     assert "output_tokens=123" in caplog.text
     assert "done_reason=stop" in caplog.text
     assert "total_duration_ns=456000000" in caplog.text
+    assert 'generated_response_json="{\\"summary\\":\\"Generated text\\"}"' in caplog.text
 
 
 @pytest.mark.asyncio
@@ -134,7 +136,7 @@ def test_returns_bad_gateway_when_ollama_fails() -> None:
     assert response.json() == {"detail": "Ollama request failed"}
 
 
-def test_generates_valid_weekly_notes_summary() -> None:
+def test_generates_valid_weekly_notes_summary(caplog: pytest.LogCaptureFixture) -> None:
     summary = {
         "clientName": "Dennis",
         "reportPeriod": {"startDate": "2026-09-10", "endDate": "2026-09-14"},
@@ -156,6 +158,8 @@ def test_generates_valid_weekly_notes_summary() -> None:
 
     assert response.status_code == 200
     assert response.json() == summary
+    assert "generated_response_json=" in caplog.text
+    assert json.dumps(json.dumps(summary)) in caplog.text
     assert fake_client.request is not None
     body = json.loads(fake_client.request.read())
     assert body["model"] == "gemma4:e2b"

@@ -14,7 +14,7 @@ python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
 The default upstream is `http://127.0.0.1:8080` for Ollama running locally with `OLLAMA_HOST=0.0.0.0:8080`. Change `OLLAMA_BASE_URL` in `.env` when Ollama is hosted elsewhere. The weekly summary request uses `OLLAMA_NUM_CTX` (default `8192`) to set Ollama's context window; increase it only if the machine has enough memory. Ensure the model is available with `ollama pull gemma4:e2b`.
 
-Ollama generation usage (prompt/output token counts, completion reason, and duration) is written to `fastapi.out.log`. Generated text and client details are not logged there.
+Ollama generation usage (prompt/output token counts, completion reason, duration, and the complete generated response) is written to `fastapi.out.log`. Generated responses may contain sensitive client health information; restrict access to this file and remove it when it is no longer needed. Request prompts and source visit notes are not logged.
 
 ## Endpoint
 

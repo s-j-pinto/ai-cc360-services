@@ -172,12 +172,13 @@ Client = Annotated[httpx.AsyncClient, Depends(get_ollama_client)]
 def log_ollama_generation(endpoint: str, result: dict[str, Any]) -> None:
     logger.info(
         "Ollama generation completed endpoint=%s prompt_tokens=%s output_tokens=%s "
-        "done_reason=%s total_duration_ns=%s",
+        "done_reason=%s total_duration_ns=%s generated_response_json=%s",
         endpoint,
         result.get("prompt_eval_count", "unavailable"),
         result.get("eval_count", "unavailable"),
         result.get("done_reason", "unavailable"),
         result.get("total_duration", "unavailable"),
+        json.dumps(result.get("response", "unavailable"), ensure_ascii=False),
     )
 
 
